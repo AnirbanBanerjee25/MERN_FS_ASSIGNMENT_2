@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body,html{
+            background: linear-gradient(#2E3192 ,#1BFFFF);
+            background-repeat: no-repeat;
+            color: white;
+            font-weight: bold;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flexbox;
+        }
+        .container{
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sort Alphabetically.</h1>
+        <input type="text" id="inp" placeholder="Enter String" required>
+        <br>
+        <br>
+        <button onclick="alphabetical()">Reverse</button>
+        <p id="result"></p>
+        <script>
+            function alphabetical(){
+                const inp=document.getElementById("inp").value;
+                const stage1=inp.split('');
+                const stage2=stage1.sort();
+                const stage3=stage2.join('');
+                document.getElementById("result").textContent=stage3;
+            }
+        </script>
+    </div>
+</body>
+</html>

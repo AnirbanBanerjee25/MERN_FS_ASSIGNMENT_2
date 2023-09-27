@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centered Form with Padding</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .custom-padding {
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-md custom-padding align-items-center">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div id="success-message" class="alert alert-success d-none">
+                    Form submitted successfully!
+                </div>
+                <form id="myform" onsubmit="submitForm(event)">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" class="form-control is-invalid" placeholder="Enter Full Name">
+                        <div class="invalid-feedback">
+                            Name is required.
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control is-invalid" id="email" placeholder="Enter email">
+                        <div class="invalid-feedback">
+                            Email is required
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="pass">Password</label>
+                        <input type="password" class="form-control is-invalid" id="pass" placeholder="Enter password">
+                        <div class="invalid-feedback">
+                            Password is required
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="hobbies">Hobbies</label><br>
+                        <select class="form-control" id="hobbies">
+                            <option>Coding</option>
+                            <option>Dancing</option>
+                            <option>Singing</option>
+                            <option>Reading</option>
+                        </select>
+                    </div>
+                    <br>
+                    <br>
+                    <button type="submit" class="btn btn-danger btn-block" style="width: 100%;">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+    <script>
+        function submitForm(event){
+            event.preventDefault();
+            var mssg=document.getElementById("success-message");
+            mssg.classList.remove("d-none");
+            document.getElementById("myform").reset();
+            setTimeout(function(){
+                mssg.classList.add("d-none");
+            },5000);
+        }
+    </script>
+</body>
+</html>
